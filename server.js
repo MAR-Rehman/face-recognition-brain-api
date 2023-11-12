@@ -10,7 +10,6 @@ const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
 const db = knex({
-  // Enter your own database information here based on what you created
   client: 'pg',
   connection: {
     connectionString : process.env.DATABASE_URL,
