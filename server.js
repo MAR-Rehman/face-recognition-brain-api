@@ -12,13 +12,13 @@ const image = require('./controllers/image');
 const db = knex({
   client: 'pg',
   connection: {
-    connectionString : process.env.DATABASE_URL,
+    connectionString : 'postgres://facechecker_db_user:hvkStcBDnOjMoH1SNtBxEfWZNIySNUEB@dpg-cl7q5mavokcc73ap1610-a/facechecker_db',
     ssl: { rejectUnauthorized: false },
-    host : process.env.DATABASE_HOST,
+    host : 'dpg-cl7q5mavokcc73ap1610-a',
     port: '5432',
-    user : process.env.DATABASE_USER,
-    password : process.env.DATABASE_PW,
-    database : process.env.DATABASE_DB
+    user : 'facechecker_db_user',
+    password : 'hvkStcBDnOjMoH1SNtBxEfWZNIySNUEB',
+    database : 'facechecker_db'
   }
 });
 
