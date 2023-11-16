@@ -10,15 +10,16 @@ const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
 const db = knex({
+  // Enter your own database information here based on what you created
   client: 'pg',
   connection: {
-    connectionString : 'postgres://facechecker_db_user:hvkStcBDnOjMoH1SNtBxEfWZNIySNUEB@dpg-cl7q5mavokcc73ap1610-a/facechecker_db',
+    connectionString : process.env.DATABASE_URL,
     ssl: true,
-    host : 'dpg-cl7q5mavokcc73ap1610-a',
+    host : process.env.DATABASE_HOST,
     port: '5432',
-    user : 'facechecker_db_user',
-    password : 'hvkStcBDnOjMoH1SNtBxEfWZNIySNUEB',
-    database : 'facechecker_db'
+    user : process.env.DATABASE_USER,
+    password : process.env.DATABASE_PW,
+    database : process.env.DATABASE_DB
   }
 });
 
