@@ -10,16 +10,15 @@ const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
 const db = knex({
-  // Enter your own database information here based on what you created
   client: 'pg',
   connection: {
-    connectionString : process.env.DATABASE_URL,
+    connectionString : 'postgres://facechecker_db_user:hvkStcBDnOjMoH1SNtBxEfWZNIySNUEB@dpg-cl7q5mavokcc73ap1610-a/facechecker_db',
     ssl: { rejectUnauthorized: false },
-    host : process.env.DATABASE_HOST,
+    host : 'dpg-cl7q5mavokcc73ap1610-a',
     port: '5432',
-    user : process.env.DATABASE_USER,
-    password : process.env.DATABASE_PW,
-    database : process.env.DATABASE_DB
+    user : 'facechecker_db_user',
+    password : 'hvkStcBDnOjMoH1SNtBxEfWZNIySNUEB',
+    database : 'facechecker_db'
   }
 });
 
@@ -36,6 +35,6 @@ app.get('/profile/:id', (req, res) => { profile.handleProfileGet(req, res, db) }
 app.put('/image', (req, res) => { image.handleImage(req, res, db) })
 app.post('/imageurl', (req, res) => { image.handleApiCall(req, res) })
 
-app.listen(process.env.PORT || 3000, ()=> {
-  console.log(`App is running on port ${process.env.PORT}`);
+app.listen(3000, ()=> {
+  console.log('app is running on port 3000');
 })
