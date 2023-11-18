@@ -13,7 +13,7 @@ const db = knex({
   client: 'pg',
   connection: {
     connectionString : 'postgres://facechecker_db_user:hvkStcBDnOjMoH1SNtBxEfWZNIySNUEB@dpg-cl7q5mavokcc73ap1610-a/facechecker_db',
-    ssl: { rejectUnauthorized: false },
+    ssl: true,
     host : 'dpg-cl7q5mavokcc73ap1610-a',
     port: '5432',
     user : 'facechecker_db_user',
